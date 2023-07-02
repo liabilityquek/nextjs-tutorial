@@ -1,0 +1,1 @@
+A Simple NextJS app tutorial
