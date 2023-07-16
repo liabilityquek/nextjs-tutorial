@@ -12,5 +12,10 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  tailwindCSS: {
+    experimental: {
+      configFile: ".config/tailwind.config.js",
+    },
+  },
 }
 
