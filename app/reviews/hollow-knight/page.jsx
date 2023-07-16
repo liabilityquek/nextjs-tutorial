@@ -1,3 +1,4 @@
+// 'use client' //to indicate this server as a client component
 export default function HollowKnightPage() {
     return(
         <>
