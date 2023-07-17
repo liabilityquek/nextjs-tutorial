@@ -4,15 +4,15 @@ export default function NavBar() {
     <nav>
       <ul className="flex gap-2">
         <li>
-          <Link href="/" className="text-orange-800 hover:underline">
-            Home
+          <Link href="/" className="font-bold font-orbitron text-orange-800 hover:underline">
+            Indie Gamer
           </Link>
         </li>
-        <li>
-          <Link href="/reviews" className="text-orange-800 hover:underline">Reviews</Link>
+        <li className="ml-auto">
+          <Link href="/reviews" className="font-bold font-orbitron text-orange-800 hover:underline">Reviews</Link>
         </li>
-        <li>
-          <Link href="/about" className="text-orange-800 hover:underline" prefetch={false}>
+        <li className="ml-auto">
+          <Link href="/about" className="font-bold font-orbitron text-orange-800 hover:underline" prefetch={false}>
             About
           </Link>
           {/* //prefetch to indicate whether to fetch the data when the page
