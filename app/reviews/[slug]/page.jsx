@@ -16,7 +16,7 @@ export default async function ReviewPage({ params: { slug } }) {
         <p className="italic pb-2">{review.date}</p>
         <img
         src={review.image}
-        alt="stardew-valley"
+        alt={review.title}
         width="640"
         height="360"
         className="mb-2 rounded"
