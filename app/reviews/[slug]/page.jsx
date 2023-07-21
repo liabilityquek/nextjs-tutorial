@@ -1,6 +1,6 @@
 import Heading from "@/components/Heading"
 import { getReview, getSlugs } from "lib/reviews";
-
+import ShareLinkButton from "@/components/ShareLinkButton";
 
 export async function generateMetadata({ params: { slug } }){
   const review = await getReview(slug)
@@ -21,7 +21,10 @@ export default async function ReviewPage({ params: { slug } }) {
     return(
         <>
         <Heading>{review.title}</Heading>
+        <div className="flex-gap-3 items-baseline">
         <p className="italic pb-2">{review.date}</p>
+        <ShareLinkButton />
+        </div>
         <img
         src={review.image}
         alt={review.title}
