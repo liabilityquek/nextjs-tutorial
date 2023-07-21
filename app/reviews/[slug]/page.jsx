@@ -1,6 +1,14 @@
 import Heading from "@/components/Heading"
 import { getReview, getSlugs } from "lib/reviews";
 
+
+export async function generateMetadata({ params: { slug } }){
+  const review = await getReview(slug)
+  return {
+    title: review.title,
+  }
+}
+
 //generate dynamic static page to speed up for server side rendering
 export async function generateStaticParams() {
   const slugs = await getSlugs();
