@@ -10,10 +10,10 @@ export async function generateMetadata({ params: { slug } }){
 }
 
 //generate dynamic static page to speed up for server side rendering
-export async function generateStaticParams() {
-  const slugs = await getSlugs();
-  return slugs.map((slug) => ({ slug }))
-}
+// export async function generateStaticParams() {
+//   const slugs = await getSlugs();
+//   return slugs.map((slug) => ({ slug }))
+// }
 
 export default async function ReviewPage({ params: { slug } }) {
   console.log(`Reviews Page: ${slug}`)
