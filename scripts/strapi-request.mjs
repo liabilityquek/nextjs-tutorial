@@ -11,8 +11,8 @@ const url =
         image: {
           fields: ["url"],
         },
-        sort: ['publishedAt: desc'],
         pagination: { pageSize: 6 },
+        sort: ['publishedAt:desc'],
       },
       //   populate: '*' //query all fields
     },
@@ -21,7 +21,7 @@ const url =
     }
   );
 
-console.log("url:", url);
+// console.log("url:", url);
 const response = await fetch(url);
 const body = await response.json();
 const formatted = JSON.stringify(body, null, 2);
