@@ -1,1 +1,1 @@
-A Simple NextJS app tutorial
+# 🚀 A Simple NextJS tutorial Game Reviews deployed on [Vercel](https://nextjs-game-reviews.vercel.app/)
