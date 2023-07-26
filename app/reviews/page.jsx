@@ -2,6 +2,7 @@ import Link from "next/link";
 import Heading from "@/components/Heading";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
+import myImageLoader from "myImageLoader";
 
 export const metadata = {
   title: 'Reviews',  
@@ -25,7 +26,10 @@ export default async function ReviewsPage() {
                   <Image
                     src={review.image}
                     alt={review.title}
-                    width="640"
+                    quality={1}
+                    loader={myImageLoader}
+                    width={640}
+                    // width="640"
                     height="360"
                     className="rounded-t"
                   />
