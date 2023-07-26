@@ -2,7 +2,7 @@ import Link from "next/link";
 import Heading from "@/components/Heading";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
-import myImageLoader from "@/myImageLoader.js";
+import myImageLoader from "my/image/loader";
 
 export const metadata = {
   title: 'Reviews',  
