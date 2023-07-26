@@ -1,6 +1,7 @@
 import Heading from "@/components/Heading"
 import { getReview, getSlugs } from "lib/reviews";
 import ShareLinkButton from "@/components/ShareLinkButton";
+import Image from "next/image";
 
 export async function generateMetadata({ params: { slug } }){
   const review = await getReview(slug)
@@ -18,6 +19,7 @@ export async function generateStaticParams() {
 export default async function ReviewPage({ params: { slug } }) {
   // console.log(`Reviews Page: ${slug}`)
     const review = await getReview(slug);
+    console.log(`review: ${JSON.stringify(review, null, 2)}`)
     return(
         <>
         <Heading>{review.title}</Heading>
@@ -25,7 +27,7 @@ export default async function ReviewPage({ params: { slug } }) {
         <p className="italic pb-2">{review.date}</p>
         <ShareLinkButton />
         </div>
-        <img
+        <Image
         src={review.image}
         alt={review.title}
         width="640"
