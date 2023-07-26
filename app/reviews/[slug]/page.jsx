@@ -1,9 +1,7 @@
-'use client'
 import Heading from "@/components/Heading"
 import { getReview, getSlugs } from "lib/reviews";
 import ShareLinkButton from "@/components/ShareLinkButton";
 import Image from "next/image";
-import myImageLoader from "loader";
 
 export async function generateMetadata({ params: { slug } }){
   const review = await getReview(slug)
@@ -30,12 +28,9 @@ export default async function ReviewPage({ params: { slug } }) {
         <ShareLinkButton />
         </div>
         <Image
-        quality={1}
-        loader={myImageLoader}
         src={review.image}
         alt={review.title}
-        width={640}
-        // width="640"
+        width="640"
         height="360"
         className="mb-2 rounded"
       />

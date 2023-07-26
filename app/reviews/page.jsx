@@ -1,14 +1,11 @@
-'use client'
 import Link from "next/link";
 import Heading from "@/components/Heading";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
-import myImageLoader from "loader";
 
 export const metadata = {
   title: 'Reviews',  
 }
-
 
 export default async function ReviewsPage() {
 
@@ -27,10 +24,7 @@ export default async function ReviewsPage() {
                   <Image
                     src={review.image}
                     alt={review.title}
-                    quality={1}
-                    loader={myImageLoader}
-                    width={640}
-                    // width="640"
+                    width="640"
                     height="360"
                     className="rounded-t"
                   />
