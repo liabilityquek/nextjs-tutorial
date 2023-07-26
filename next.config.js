@@ -22,6 +22,6 @@
 module.exports = {
   images: {
     loader: 'custom',
-    loaderFile: 'my/image/loader',
+    loaderFile: './loader.js',
   },
 }

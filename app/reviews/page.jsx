@@ -1,8 +1,9 @@
+'use client'
 import Link from "next/link";
 import Heading from "@/components/Heading";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
-import myImageLoader from "my/image/loader";
+import myImageLoader from "loader";
 
 export const metadata = {
   title: 'Reviews',  
