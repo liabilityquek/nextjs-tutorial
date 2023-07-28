@@ -30,8 +30,8 @@ export default async function ReviewPage({ params: { slug } }) {
         <Image
         src={review.image}
         alt={review.title}
-        width="640"
-        height="360"
+        width={640}
+        height={360}
         className="mb-2 rounded"
       />
         <article dangerouslySetInnerHTML={{__html: review.body}}

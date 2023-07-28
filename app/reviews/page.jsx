@@ -24,8 +24,8 @@ export default async function ReviewsPage() {
                   <Image
                     src={review.image}
                     alt={review.title}
-                    width="640"
-                    height="360"
+                    width={640}
+                    height={360}
                     className="rounded-t"
                   />
                   <h2 className="font-semibold font-orbitron py-1 text-center">{review.title}</h2>
