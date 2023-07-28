@@ -9,7 +9,7 @@ module.exports = {
       //   hostname: 'localhost',
       //   port: '1337',
       //   pathname: '/uploads/**'
-      // },
+      // }
       // next Image config for running Vercel
       {
         protocol: "https",

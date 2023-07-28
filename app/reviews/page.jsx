@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function ReviewsPage() {
 
-  const reviews = await getAllReviews();
+  const reviews = await getAllReviews(6);
   // console.log(`ReviewsPage: ${JSON.stringify(reviews, null, 2)}`)
   return (
     <>
@@ -17,13 +17,14 @@ export default async function ReviewsPage() {
 
       <nav>
         <ul className="flex flex-row flex-wrap gap-3">
-          {reviews.map((review) => (
+          {reviews.map((review, index) => (
             <li key={review.slug} className="bg-white border rounded shadow w-80 hover:shadow-xl cursor-pointer">
               <Link href={`/reviews/${review.slug}`} prefetch={false}>
                 
                   <Image
                     src={review.image}
                     alt={review.title}
+                    priority={index === 0} //load the image asap
                     width={640}
                     height={360}
                     className="rounded-t"
