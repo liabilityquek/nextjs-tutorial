@@ -12,7 +12,7 @@ module.exports = {
       {
         protocol: "https",
         hostname: "**.digitaloceanspaces.com",
-        port: '1337',
+        port: '',
       },
     ],
   },
