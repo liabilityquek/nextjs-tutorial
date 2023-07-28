@@ -3,12 +3,14 @@ module.exports = {
   // output: 'export',
   images: {
     remotePatterns: [
+      // nextjs Image config for running on localhost
       // {
       //   protocol: 'http', 
       //   hostname: 'localhost',
       //   port: '1337',
       //   pathname: '/uploads/**'
       // },
+      // next Image config for running Vercel
       {
         protocol: "https",
         hostname: "**.digitaloceanspaces.com",
@@ -17,10 +19,3 @@ module.exports = {
     ],
   },
 };
-
-// module.exports = {
-//   images: {
-//     loader: 'custom',
-//     loaderFile: './loader.js',
-//   },
-
