@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
 
+export const dynamic = 'force-dynamic' //disabling all caching of fetch requests and always revalidating
+
 export default async function HomePage() {
   const reviews = await getAllReviews(3);
   return (
