@@ -7,8 +7,6 @@ export const metadata = {
   title: 'Reviews',  
 }
 
-export const dynamic = 'force-dynamic' //disabling all caching of fetch requests and always revalidating
-
 export default async function ReviewsPage() {
 
   const reviews = await getAllReviews(6);

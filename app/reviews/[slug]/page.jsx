@@ -4,18 +4,20 @@ import ShareLinkButton from "@/components/ShareLinkButton";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-dynamic"; //disabling all caching of fetch requests and always revalidating
+//export const dynamic = "force-dynamic"; //disabling all caching of fetch requests and always revalidating
+
+export const revalidate = 30; //page will revalidate within 30s
 
 export async function generateMetadata({ params: { slug } }) {
   const review = await getReview(slug);
   return review ? { title: review.title } : notFound();
 }
 
-//generate dynamic static page to speed up for server side rendering
-// export async function generateStaticParams() {
-//   const slugs = await getSlugs();
-//   return slugs.map((slug) => ({ slug }))
-// }
+// generate dynamic static page to speed up for server side rendering
+export async function generateStaticParams() {
+  const slugs = await getSlugs();
+  return slugs.map((slug) => ({ slug }))
+}
 
 export default async function ReviewPage({ params: { slug } }) {
   // console.log(`Reviews Page: ${slug}`)

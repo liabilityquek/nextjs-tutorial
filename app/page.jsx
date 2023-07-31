@@ -3,8 +3,6 @@ import Link from "next/link";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
 
-export const dynamic = 'force-dynamic' //disabling all caching of fetch requests and always revalidating
-
 export default async function HomePage() {
   const reviews = await getAllReviews(3);
   return (
@@ -31,7 +29,7 @@ export default async function HomePage() {
                 className="rounded-t sm:rounded-l sm:rounded-r-none"
               />
               <div className="px-2 py-1 text-center sm:text-left">
-              <h2 className="font-orbitron font-semibold py-1 text-center sm:px-2">
+              <h2 className="font-orbitron font-semibold py-1 sm:px-2 text-center lg:text-left">
                 {review.title}
               </h2>
               <p className="hidden px-2 sm:block text-center">
