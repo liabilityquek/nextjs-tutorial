@@ -10,6 +10,9 @@ export async function sendEmail(options) {
             path.resolve(__dirname, `../email_template/${options.templateName}.html`),
             "utf-8"
         );
+        console.log('__dirname:', __dirname);
+        console.log('Full path:', path.resolve(__dirname, `../email_template/${options.templateName}.html`));
+
 
         const html = ejs.render(template, options.templateVariables);
         const transporter = nodemailer.createTransport({
