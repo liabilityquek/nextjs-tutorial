@@ -1,15 +1,15 @@
-const nodemailer = require("nodemailer");
+import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 const Email = require('../emails/index.tsx');
 
 export async function sendEmail(options, payload) {
-    const emailHtml = render(<Email payloadBody={payload}/>,
-    {
-        pretty: true,
-    });
-
-    console.log(`emailHtml: ${emailHtml}`);
     try {
+        // const emailHtml = render(<Email payloadBody={payload} />,
+        //     {
+        //         plainText: true,
+        //     });
+
+        // console.log(`emailHtml: ${emailHtml}`);
         const transporter = nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
             port: process.env.EMAIL_PORT,
@@ -22,7 +22,7 @@ export async function sendEmail(options, payload) {
             from: process.env.EMAIL_FROM,
             to: process.env.EMAIL_TO,
             subject: options.subject,
-            html: '<strong>testing</strong>',
+            html: options.body,
 
         };
         // console.log(`mailOptions.subject: ${mailOptions.subject}`);
