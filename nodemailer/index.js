@@ -1,20 +1,15 @@
 const nodemailer = require("nodemailer");
-const ejs = require("ejs");
-const fs = require("fs");
-const path = require("path");
+import { render } from '@react-email/render';
+const Email = require('../emails/index.tsx');
 
-export async function sendEmail(options) {
+export async function sendEmail(options, payload) {
+    const emailHtml = render(<Email payloadBody={payload}/>,
+    {
+        pretty: true,
+    });
+
+    console.log(`emailHtml: ${emailHtml}`);
     try {
-
-        const template = fs.readFileSync(
-            path.resolve(__dirname, `../email_template/${options.templateName}.html`),
-            "utf-8"
-        );
-        console.log('__dirname:', __dirname);
-        console.log('Full path:', path.resolve(__dirname, `../email_template/${options.templateName}.html`));
-
-
-        const html = ejs.render(template, options.templateVariables);
         const transporter = nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
             port: process.env.EMAIL_PORT,
@@ -25,13 +20,12 @@ export async function sendEmail(options) {
         });
         const mailOptions = {
             from: process.env.EMAIL_FROM,
-            // to: options.email,
             to: process.env.EMAIL_TO,
             subject: options.subject,
-            html: html,
+            html: '<strong>testing</strong>',
 
         };
-        //   console.log(mailOptions.html);
+        // console.log(`mailOptions.subject: ${mailOptions.subject}`);
         await transporter.sendMail(mailOptions);
     } catch (error) {
         console.error(`Error sending email notification: ${error}`)

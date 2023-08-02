@@ -1,0 +1,49 @@
+{
+  "payload": {
+    "event": "entry.update",
+    "createdAt": "2023-08-02T02:46:18.944Z",
+    "model": "review",
+    "uid": "api::review.review",
+    "entry": {
+      "id": 29,
+      "slug": "alan-wake-2-duplicate",
+      "title": "Alan Wake II (duplicate)",
+      "body": "**Alan Wake II** is a survival horror game played from a third-person perspective. Players play as Alan Wake or Saga Anderson in two separate single-player stories, which can played in any order the player chooses; although the opening sequence and ending sequence of the game can only be played as Saga and as Alan, respectively.\n\nWake and Anderson traverse environments and fight enemies using various firearms and a flashlight, the latter of which can be \"focused\" to render enemies vulnerable to firearm attacks. Focusing the flashlight drains its battery, and players need to strategically use a limited amount of batteries and ammunition in order to survive. When enemies are close, Alan or Saga can perform a dodge maneuver.\n\nAlan Wake II incorporates detective elements: when playing as Saga, players can always pause the gameplay to access an enemy-free space dubbed the \"Mind Place\".[3] Described by Remedy as a \"3D menu\", the Mind Place is a visual representation of Saga's thoughts. In the Mind Place, players manage a pin board in which they can connect clues to piece together the main mystery, as well as profile characters to gather clues.\n\nA returning element from Alan Wake is manuscript pages: players find pages of a manuscript that foreshadow upcoming events in the story. Unlike the previous game, Alan Wake II features a dialogue tree system.",
+      "createdAt": "2023-07-31T06:15:09.400Z",
+      "updatedAt": "2023-08-02T02:46:18.925Z",
+      "publishedAt": "2023-07-31T06:15:12.348Z",
+      "subtitle": "An FBI agent looking for answers. Two realities. Two hero characters. One horror story that wants them dead.",
+      "image": {
+        "id": 28,
+        "name": "alan-wake-2.jpg",
+        "alternativeText": null,
+        "caption": null,
+        "width": 420,
+        "height": 236,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_alan-wake-2.jpg",
+            "hash": "5ff04f572ccbda6bcc997e44b69d2a80",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 138,
+            "size": 3,
+            "url": "https://next-cms-strapi-spaces.sgp1.digitaloceanspaces.com/5ff04f572ccbda6bcc997e44b69d2a80.jpg"
+          }
+        },
+        "hash": "24013197038a7a21343fe711215077ac",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 7.11,
+        "url": "https://next-cms-strapi-spaces.sgp1.digitaloceanspaces.com/24013197038a7a21343fe711215077ac.jpg",
+        "previewUrl": null,
+        "provider": "strapi-provider-upload-do",
+        "provider_metadata": null,
+        "createdAt": "2023-07-31T06:14:07.293Z",
+        "updatedAt": "2023-07-31T06:14:07.293Z"
+      }
+    }
+  }
+}
