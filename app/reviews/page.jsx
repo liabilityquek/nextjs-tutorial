@@ -38,14 +38,13 @@ export default async function ReviewsPage({ searchParams }) {
           ))}
         </ul>
       </nav>
-      {/* <div className="flex gap-2 pb-3"> */}
-      <div>
+      <div className="flex justify-center items-center my-2">
         <ul className="list-style-none flex">
-        <li>
-        <Link href={`/reviews?page={page - 1}`} className="pointer-events-none relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Previous</Link>
+          <li>
+            <Link href={`/reviews?page=${page - 1}`} className="cursor-pointer relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Previous</Link>
           </li>
-        <span>Page {page} </span>
-        <Link href={`/reviews?page={page + 1}`} className="pointer-events-none relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Next</Link>
+          <span>Page {page} </span>
+          <Link href={`/reviews?page=${page + 1}`} className="cursor-pointer relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Next</Link>
         </ul>
       </div>
     </>
