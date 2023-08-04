@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Heading from "@/components/Heading";
+import Pagination from "@/components/Pagination"
+import NotFoundPage from "app/not-found";
 import { getAllReviews } from "lib/reviews";
 import Image from "next/image";
 
@@ -7,13 +9,16 @@ export const metadata = {
   title: 'Reviews',
 }
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 10;
 
 export default async function ReviewsPage({ searchParams }) {
   console.log(`ReviewsPage page no: ${searchParams}`)
   const page = parsePageParam(searchParams.page);
-  const reviews = await getAllReviews(PAGE_SIZE, page);
+  const { reviews, pageCount } = await getAllReviews(PAGE_SIZE, page);
   console.log(`ReviewsPage: ${reviews.map((review) => review.slug).join(', ')}`)
+  if (page > pageCount) {
+    return <NotFoundPage />
+  }
   return (
     <>
       <Heading>Reviews</Heading>
@@ -38,15 +43,8 @@ export default async function ReviewsPage({ searchParams }) {
           ))}
         </ul>
       </nav>
-      <div className="flex justify-center items-center my-2">
-        <ul className="list-style-none flex">
-          <li>
-            <Link href={`/reviews?page=${page - 1}`} className="cursor-pointer relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Previous</Link>
-          </li>
-          <span>Page {page} </span>
-          <Link href={`/reviews?page=${page + 1}`} className="cursor-pointer relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Next</Link>
-        </ul>
-      </div>
+      <Pagination page={page} pageCount={pageCount} href="/reviews" />
+
     </>
   );
 }
