@@ -17,13 +17,6 @@ export default async function ReviewsPage({ searchParams }) {
   return (
     <>
       <Heading>Reviews</Heading>
-      <div className="flex gap-2 pb-3">
-        <Link href={`/reviews?page={page - 1}`}>&lt;</Link>
-        <span>Page {page} </span>
-        <Link href={`/reviews?page={page + 1}`}>&lt;</Link>
-      </div>
-
-
       <nav>
         <ul className="flex flex-row flex-wrap gap-3">
           {reviews.map((review, index) => (
@@ -45,6 +38,16 @@ export default async function ReviewsPage({ searchParams }) {
           ))}
         </ul>
       </nav>
+      {/* <div className="flex gap-2 pb-3"> */}
+      <div>
+        <ul className="list-style-none flex">
+        <li>
+        <Link href={`/reviews?page={page - 1}`} className="pointer-events-none relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Previous</Link>
+          </li>
+        <span>Page {page} </span>
+        <Link href={`/reviews?page={page + 1}`} className="pointer-events-none relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-500 transition-all duration-300 dark:text-neutral-400">Next</Link>
+        </ul>
+      </div>
     </>
   );
 }
