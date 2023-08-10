@@ -40,6 +40,13 @@ export default async function HomePage() {
           </li>
         ))}
       </ul>
+      <Link
+      prefetch={false}
+      href='/login'
+      className="mt-5 text-center"
+      >
+        Login
+      </Link>
     </>
   );
 }

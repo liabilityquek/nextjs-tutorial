@@ -3,7 +3,12 @@
       "jsx": "react",
       "baseUrl": ".",
       "paths": {
-        "@/components/*": ["components/*"]
+        "@/components/*": ["components/*"],
+        "@/lib/*": ["lib/*"],
+        "@/app/*": ["app/*"],
+        "@/emails/*": ["emails/*"],
+        "@/nodemailer/*": ["nodemailer/*"]
+
       }
     }
   }

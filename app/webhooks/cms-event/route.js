@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { revalidateTag } from 'next/cache'
 import { CACHE_TAG_REVIEWS } from "lib/reviews";
-import { sendEmail } from "../../../nodemailer/index.js";
+import { sendEmail } from "@/nodemailer/index.js";
 
 
 export async function POST(request) {
